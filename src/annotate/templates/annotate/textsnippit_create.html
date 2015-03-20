@@ -1,0 +1,25 @@
+{% extends "annotate/base.html" %}
+{% load staticfiles %}
+
+{% block css %}
+{{ block.super }}
+<link href="{% static 'annotate/css/annotate.css' %}" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block content %}
+<!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <form action="" method="post">{% csrf_token %}
+    				{{ form.as_p }}
+    			<input type="submit" value="Create" />
+				</form>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+{% endblock %}
